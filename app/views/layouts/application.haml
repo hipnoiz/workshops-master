@@ -1,0 +1,35 @@
+!!!
+%html{ lang: 'en' }
+  %head
+    %meta{ charset: 'utf-8' }/
+    %meta{ content: 'IE=Edge,chrome=1', 'http-equiv' => 'X-UA-Compatible' }/
+    %meta{ content: 'width=device-width, initial-scale=1.0', name: 'viewport' }/
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+
+  %body
+    %nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          %span.navbar-brand Netguru Kraków Workshops 2014
+          = link_to 'Home', root_path 
+        %p.navbar-text.navbar-right
+          -if user_signed_in?
+            -if current_user.admin == true
+              %span Admin
+            %span Witaj
+            %span= current_user.firstname
+            = link_to 'Sign Out', destroy_user_session_path, :method => :delete
+          -else
+            = link_to 'Sign In', new_user_session_path
+            = link_to 'Register', new_user_registration_path
+    .container-fluid
+      .row
+        .col-lg-12
+        - if notice
+          %p.alert.alert-success= notice
+        - elsif alert
+          %p.alert.alert-danger= alert
+          
+        = yield
