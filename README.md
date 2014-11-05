@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Workshops application
 
 ### Issues to solve:
