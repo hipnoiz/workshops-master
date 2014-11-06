@@ -1,22 +1,4 @@
-<<<<<<< HEAD
 # Workshops application
-
-Hi! We think it’s great that you want to **join along with Netguru** to start learning **Ruby on Rails**. Taking part in workshops is also a **great opportunity to start an internship** with us and become one of the Netguru folks. Since you have just taken your first step on your adventure with programming in RoR, we challenge you to complete the following task. **Ready, steady…Go!**
-
-### Let’s start with a setup:
-
-**Database**
-
-Copy the database config file (and edit if needed): 
-` cp config/database.yml.sample config/database.yml`
-
-Make sure the user you've listed in `database.yml` is created for postgres:
-`createuser -s -r workshops`
-
-Setup the database for your application (development and test environments):
-`bin/rake db:setup`
-`bin/rake db:test:prepare`
-
 
 ### Issues to solve:
 
@@ -65,20 +47,3 @@ Setup the database for your application (development and test environments):
 2. Website doesn't work on Heroku.
 
 3. Design is not finished.
-
-### Here are some great resources to help you with kicking off your adventure with Ruby and Rails:
-
-* [http://www.codeschool.com/paths/ruby](http://www.codeschool.com/paths/ruby) - free Ruby and Rails courses available at the elementary level
-* you want to be sure your Ruby basis are solid? Check out the Ruby Koans - [http://rubykoans.com/](http://rubykoans.com/)
-* [http://guides.rubyonrails.org/](http://guides.rubyonrails.org/) - sooner or later this one will come in handy
-* not feeling comfortable with JavaScript / jQuery? CodeSchool can help you with this one too - [http://www.codeschool.com/courses/try-jquery](http://www.codeschool.com/courses/try-jquery)
-
-## Good Luck! 
-
-**Check out event on [facebook](https://www.facebook.com/events/1558485497706978).**
-=======
-workshops-master
-================
-
-netguru
->>>>>>> 0d9b8ea3e3bf63641de631811886a1fcfbf02532
