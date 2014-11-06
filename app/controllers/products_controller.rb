@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-      if current_user.id != product.user_id 
+      if (current_user.id != product.user_id)
         redirect_to category_product_url(category, product), flash: {error: "You are not allowed to edit this product." }
       end
   end
@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
 
   def update
     if user_signed_in?
-      if current_user.id == product.user_id 
+      if current_user.id == product.user_id
         if self.product.update(product_params)
         redirect_to category_product_url(category, product), notice: 'Product was successfully updated.'
         else
@@ -56,7 +56,7 @@ class ProductsController < ApplicationController
     if user_signed_in?
       if current_user.id == product.user_id 
         product.destroy
-        redirect_to category_url(product.category), notice: 'Product was successfully destroyed.'
+        redirect_to category_url(product.category)
       else
         redirect_to category_product_url(category, product), flash: {error: "You are not allowed to edit this product." }
       end

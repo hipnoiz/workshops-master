@@ -16,7 +16,10 @@
     .form-group
       = f.label :price
       = f.text_field :price, class: 'form-control'
-      
+      %br
       = f.submit 'Save', class: 'btn btn-default'
   -else
-    %p You have to sign in to create a product
+    %p 
+      You have to 
+      =link_to 'sign in', new_user_session_path
+      to create a product
