@@ -20,6 +20,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'travis'
 gem 'ffaker'
 gem 'tzinfo-data'
+gem "heroku"
 
 group :development do
   gem 'spring'

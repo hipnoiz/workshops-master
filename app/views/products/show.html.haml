@@ -21,7 +21,7 @@
     %h4 Submit a review
     = render 'reviews/form'
 -else
-  = link_to 'Edit', edit_category_product_path(category.id, product.id)
+  = link_to 'Edit', edit_category_product_path(category.id, product.id), class: 'btn btn-default'
 %br
 %h3 Reviews
 = render reviews

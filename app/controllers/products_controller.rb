@@ -15,15 +15,18 @@ class ProductsController < ApplicationController
   end
 
   def edit
-      if (current_user.id != product.user_id)
+    if user_signed_in?
+      if current_user.id != product.user_id
         redirect_to category_product_url(category, product), flash: {error: "You are not allowed to edit this product." }
       end
+    else
+      redirect_to(new_user_session_path)      
+    end
   end
 
   def create
     if user_signed_in?
       self.product = Product.new(product_params)
-
       if product.save
         category.products << product
         redirect_to category_product_url(category, product), notice: 'Product was successfully created.'
@@ -54,11 +57,11 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   def destroy
     if user_signed_in?
-      if current_user.id == product.user_id 
+      if current_user.id == product.user_id || current_user.try(:admin?)
         product.destroy
         redirect_to category_url(product.category)
       else
-        redirect_to category_product_url(category, product), flash: {error: "You are not allowed to edit this product." }
+        redirect_to category_product_url(category, product), error: "You are not allowed to edit this product."
       end
     else
       redirect_to(new_user_session_path)

@@ -1,6 +1,4 @@
 class CategoriesController < ApplicationController
-
-  
   expose(:categories)
   expose(:category)
   expose(:product) { Product.new }
